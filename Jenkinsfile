@@ -19,8 +19,4 @@ node {
 
    }
     
-    stage('Build Docker Image') {
-        app = docker.build("juice-shop")        
-        sh 'echo "Docker Image completed"'
-   }
 }
