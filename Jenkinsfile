@@ -22,7 +22,7 @@ node {
    stage('SonarQube analysis') {
     def scannerHome = tool 'sonarqubeScanner';
     withSonarQubeEnv('sonarqubeServer') {
-      sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=disec_devsecops_project -Dsonar.sources=. -Dsonar.host.url=http://10.48.253.181:9000 -D sonar.skipPackageDesign=true -Dsonar.skipDesign=true -Dsonar.login=c75b2e339745bb9295a6786e5c12cf40a3b96c14"
+      sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=disec_devsecops_project -Dsonar.sources=. -Dsonar.host.url=http://10.48.253.181:9000 -Dsonar.skipPackageDesign=true -Dsonar.skipDesign=true -Dsonar.login=c75b2e339745bb9295a6786e5c12cf40a3b96c14"
     }
   }
     
