@@ -22,7 +22,6 @@ node {
    stage('SonarQube analysis') {
     def scannerHome = tool 'sonarqubeScanner';
     withSonarQubeEnv('sonarqubeServer') {
-      sh 'wget http://172.17.0.1:9000'
       sh "${scannerHome}/bin/sonar-scanner"
     }
   }
