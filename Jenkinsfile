@@ -22,7 +22,8 @@ node {
    stage('SonarQube analysis') {
     def scannerHome = tool 'sonarqubeScanner';
     withSonarQubeEnv('sonarqubeServer') {
-      sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=qwertyuiop123 -Dsonar.sources=. -Dsonar.host.url=http://10.48.50.44:9000 -Dsonar.login=jenkins"
+      sh 'wget http://10.48.50.44:9000'
+      sh "${scannerHome}/bin/sonar-scanner -X -Dsonar.projectKey=qwertyuiop123 -Dsonar.sources=. -Dsonar.host.url=http://10.48.50.44:9000 -Dsonar.login=jenkins"
     }
   }
     
