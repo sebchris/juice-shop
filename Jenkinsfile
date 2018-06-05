@@ -20,7 +20,7 @@ node {
    }
     
    stage('SonarQube analysis') {
-    def scannerHome = tool 'SonarQube Scanner 2.8';
+    def scannerHome = tool 'sonarqubeScanner';
     withSonarQubeEnv('Jenkins') {
       sh "${scannerHome}/bin/sonar-scanner"
     }
