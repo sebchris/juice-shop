@@ -23,7 +23,7 @@ node {
     def scannerHome = tool 'sonarqubeScanner';
     withSonarQubeEnv('sonarqubeServer') {
       sh 'wget http://172.17.0.1:9000'
-      sh "${scannerHome}/bin/sonar-scanner -X -Dsonar.projectKey=qwertyuiop123 -Dsonar.sources=. -Dsonar.host.url=http://172.17.0.1:9000 -Dsonar.login=jenkins"
+      sh "${scannerHome}/bin/sonar-scanner"
     }
   }
     
