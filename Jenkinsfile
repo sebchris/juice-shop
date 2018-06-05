@@ -1,5 +1,11 @@
 node {
-    def app
+    triggers { 
+        pollSCM('H/5 * * * *')
+    }
+    
+    options {
+        buildDiscarder(logRotator(numToKeepStr:'5'))
+    }
 
     stage('Clone Repository') {
         checkout scm
