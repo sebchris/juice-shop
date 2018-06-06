@@ -1,8 +1,4 @@
 node {
-    triggers { 
-        pollSCM('H/5 * * * *')
-    }
-    
     options {
         buildDiscarder(logRotator(numToKeepStr:'5'))
     }
