@@ -1,8 +1,4 @@
 node {
-    options {
-        buildDiscarder(logRotator(numToKeepStr:'5'))
-    }
-
     stage('Clone Repository') {
         checkout scm
     } 
